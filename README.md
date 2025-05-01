@@ -1,2 +1,11 @@
 # soduko-multithread
-this project is a simple multithread sudoku validator that gets a 9*9 matrix and checks if it is a valid sudoku or not. it has three threads one forf checking we have 1 to 9 numbers once in a row one checks if we have 1 to 9 numbers once in a column . and one for checking if number of our subgrids have all if the 1 to 9 numbers or not .   
+this project is a simple multithread sudoku validator that gets a 9*9 matrix and checks if it is a valid sudoku or not. it has three threads one forf checking we have 1 to 9 numbers once in a row one checks if we have 1 to 9 numbers once in a column . and one for checking if number of our subgrids have all if the 1 to 9 numbers or not .  
+## how to compile
+run
+```
+gcc sudoku.c -o sudoku -pthread
+```
+compile
+```
+./sudoku_9x9
+```
