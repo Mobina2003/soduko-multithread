@@ -7,5 +7,5 @@ gcc sudoku.c -o sudoku -pthread
 ```
 compile
 ```
-./sudoku_9x9
+./sudoku
 ```
