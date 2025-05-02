@@ -5,14 +5,14 @@
 #define SIZE 9
 #define SUBGRID_SIZE 3
 
-// Structure to hold Sudoku data
+
 typedef struct {
-    int grid[SIZE][SIZE];  // 9x9 grid
-    bool valid;            // Validity flag
-    pthread_mutex_t mutex; // Mutex for thread-safe updates
+    int grid[SIZE][SIZE];  
+    bool valid;            
+    pthread_mutex_t mutex; 
 } SudokuData;
 
-// Check if a row contains numbers 1-9 exactly once
+// Check if a row contains numbers 1-9 exactly once thread1
 bool check_row(int grid[SIZE][SIZE], int row) {
     bool seen[SIZE] = {false};
     for (int col = 0; col < SIZE; col++) {
@@ -25,7 +25,7 @@ bool check_row(int grid[SIZE][SIZE], int row) {
     return true;
 }
 
-// Check if a column contains numbers 1-9 exactly once
+// Check if a column contains numbers 1-9 exactly once thread2
 bool check_col(int grid[SIZE][SIZE], int col) {
     bool seen[SIZE] = {false};
     for (int row = 0; row < SIZE; row++) {
@@ -38,7 +38,7 @@ bool check_col(int grid[SIZE][SIZE], int col) {
     return true;
 }
 
-// Check if a 3x3 subgrid contains numbers 1-9 exactly once
+// subgrid
 bool check_subgrid(int grid[SIZE][SIZE], int start_row, int start_col) {
     bool seen[SIZE] = {false};
     for (int i = 0; i < SUBGRID_SIZE; i++) {
@@ -115,7 +115,7 @@ int main() {
         .mutex = PTHREAD_MUTEX_INITIALIZER
     };
 
-    // Read 9x9 Sudoku grid input
+
     printf("Enter the 9x9 Sudoku grid (row-wise, numbers 1-9):\n");
     for (int row = 0; row < SIZE; row++) {
         printf("Row %d: ", row + 1);
